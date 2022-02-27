@@ -32,7 +32,11 @@ class Hyperparams:
     attention_win_size = 3
 
     # data
+<<<<<<< HEAD
     data = "/data/private/voice/LJSpeech-1.0"
+=======
+    data = "D:\MachineLearning\Final year project\Text-to-speech(dc_tts)\dc_tts\LJobamaspeech"
+>>>>>>> transfer learning to obama speech and tuning
     # data = "/data/private/voice/kate"
     test_data = 'harvard_sentences.txt'
     vocab = "PE abcdefghijklmnopqrstuvwxyz'.?" # P: Padding, E: EOS.
@@ -43,5 +47,9 @@ class Hyperparams:
     lr = 0.001 # Initial learning rate.
     logdir = "logdir/LJ01"
     sampledir = 'samples'
+<<<<<<< HEAD
     B = 32 # batch size
+=======
+    B = 8 # batch size
+>>>>>>> transfer learning to obama speech and tuning
     num_iterations = 2000000

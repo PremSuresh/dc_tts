@@ -42,7 +42,11 @@ def load_data(mode="train"):
         if "LJ" in hp.data:
             # Parse
             fpaths, text_lengths, texts = [], [], []
+<<<<<<< HEAD
             transcript = os.path.join(hp.data, 'transcript.csv')
+=======
+            transcript = os.path.join(hp.data, 'finaltranscript.csv')
+>>>>>>> transfer learning to obama speech and tuning
             lines = codecs.open(transcript, 'r', 'utf-8').readlines()
             for line in lines:
                 fname, _, text = line.strip().split("|")
@@ -59,7 +63,11 @@ def load_data(mode="train"):
         else: # nick or kate
             # Parse
             fpaths, text_lengths, texts = [], [], []
+<<<<<<< HEAD
             transcript = os.path.join(hp.data, 'transcript.csv')
+=======
+            transcript = os.path.join(hp.data, 'finaltranscript.csv')
+>>>>>>> transfer learning to obama speech and tuning
             lines = codecs.open(transcript, 'r', 'utf-8').readlines()
             for line in lines:
                 fname, _, text, is_inside_quotes, duration = line.strip().split("|")
@@ -104,8 +112,13 @@ def get_batch():
         if hp.prepro:
             def _load_spectrograms(fpath):
                 fname = os.path.basename(fpath)
+<<<<<<< HEAD
                 mel = "mels/{}".format(fname.replace("wav", "npy"))
                 mag = "mags/{}".format(fname.replace("wav", "npy"))
+=======
+                mel = "mels/{}".format(fname.decode("utf-8").replace("wav", "npy"))
+                mag = "mags/{}".format(fname.decode("utf-8").replace("wav", "npy"))
+>>>>>>> transfer learning to obama speech and tuning
                 return fname, np.load(mel), np.load(mag)
 
             fname, mel, mag = tf.py_func(_load_spectrograms, [fpath], [tf.string, tf.float32, tf.float32])
